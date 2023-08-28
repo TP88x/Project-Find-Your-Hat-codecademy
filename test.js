@@ -7,7 +7,7 @@ const fieldCharacter = '⬜';
 const pathCharacter = '👺';
 let andField = [];
 const fieldRange = 10
-const manyO = 30
+const manyO = 50
 
 //create field
 for (let i = 0; i < fieldRange; i++) {
@@ -51,7 +51,7 @@ class Field {
     print() {
         clear();
         // console.log(this.field.join('\n'))
-        console.log(this.field.map(row => row.join(' ')).join('\n'))
+        console.log(this.field.map(row => row.join('')).join('\n'))
         console.log(pathCharacter.indexOf())
     }
 }
@@ -70,8 +70,17 @@ function addCaretToField(field) {
         do {
             randomRowO = Math.floor(Math.random() * numRows);
             randomColO = Math.floor(Math.random() * numCols);
-        } while (field[randomRowO][randomColO] === pathCharacter || (randomRowO === 0 && randomColO === 1) || (randomRowO === 1 && randomColO === 0) || (randomRowO === 0 && randomColO === 0))
-
+        } while (field[randomRowO][randomColO] === pathCharacter 
+            || (randomRowO === 0 && randomColO === 1) 
+            || (randomRowO === 1 && randomColO === 0) 
+            || (randomRowO === 0 && randomColO === 0)
+            || (randomRowO === 0 && randomColO === 2) 
+            || (randomRowO === 0 && randomColO === 3) 
+            || (randomRowO === 0 && randomColO === 4)
+            || (randomRowO === 0 && randomColO === 5)
+            || (randomRowO === 1 && randomColO === 5) 
+            || (randomRowO === 2 && randomColO === 5) 
+            || (randomRowO === 3 && randomColO === 5))
         field[randomRowO][randomColO] = hole;
     }
 
@@ -86,3 +95,11 @@ function addCaretToField(field) {
     return field;
 }
 
+let addField1 = [] ;
+for(let i = 0; i < 5; i++) {
+  addField1.push([]);
+  for(let n = 0; n < 5; n++) {
+    addField1[i].push(fieldCharacter);
+  }
+}
+console.log(addField1)

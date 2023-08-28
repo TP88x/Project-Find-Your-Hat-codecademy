@@ -94,7 +94,7 @@ class Field {
   }
   newMap(){
     clear();
-    console.log(this.field.map(row => row.join(' ')).join('\n'));
+    console.log(this.field.map(row => row.join('')).join('\n'));
   }
 }
 const nPrint = new Field();
@@ -109,5 +109,4 @@ playField.playGame()
 //ส่วนที่ยาก หลังจากสร้างแมฟแล้วใส่ กับดักและหมวก เข้าไปแล้ว  ต้องหาวิธี ทำให้ pathCharacter ไปอยู่ในแมฟ ผมใช้วิธี เรียก print ออกไปเก็บค่าแล้วนำกลับมา playField ถึงจะทำได้ครับ
 //หลังจากนั้นก็ทำเงื่อนไข ไม่ให้ เดินออกจากแมฟหรือทะลุแมฟ 
 // สร้างโหมด โดนกำหนด ความยาวและระเบิด
-
 

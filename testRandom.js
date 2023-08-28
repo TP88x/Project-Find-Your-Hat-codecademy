@@ -108,10 +108,10 @@ class Field {
   }
   newMap(){
     clear();
-    console.log(this.field.map(row => row.join(' ')).join('\n'));
+    console.log(this.field.map(row => row.join('')).join('\n'));
   }
 }
-const nPrint = new Field();
+// const nPrint = new Field();
 // Play !!!
 const playField = new Field();
 playField.playGame()

@@ -18,12 +18,16 @@ class Field {
     while(this.endGame === false){
         this.newMap();
         console.log(`X = ${this.positionX} || Y = ${this.positionY}`);
-        const move = prompt('Welcome to the game which way are you going ? \nW=up S=down A=left D=right : ');
+        const move = prompt('Welcome to the game which way are you going ? \nW =up S =down A =left D =right : ');
         this.field[this.positionX][this.positionY] = fieldCharacter;
-        if (move.toLocaleUpperCase() === 'W')(this.positionX - 1) < 0 ? this.positionX : this.positionX -=1 ;  // W เป็นแนวแกน X ขึ้น ถ้าน้อยกว่า 0 จะทำอีกเงื่อนไข ตือ this.positionX = 0 ถ้าไม่ใช่ ให้ this.positionX -1
-        if (move.toLocaleUpperCase() === 'A')(this.positionY - 1) < 0 ? this.positionY : this.positionY -=1 ;  // A เป็นแนวแกน Y ซ้าย ถ้าน้อยกว่า 0 จะทำอีกเงื่อนไข ตือ this.positionํY = 0 ถ้าไม่ใช่ ให้ this.positionY -1
-        if (move.toLocaleUpperCase() === 'S')(this.positionX + 1) < fieldRange ? this.positionX += 1 : this.positionX ; // S เป็นแนวแกน X ลง ถ้าน้อยกว่า fieldRange จะ +1
-        if (move.toLocaleUpperCase() === 'D')(this.positionY + 1) < fieldRange ? this.positionY += 1 : this.positionY ; // D เป็นแนวแกน Y ขวา ถ้าน้อยกว่า fieldRange จะ +1
+        // W เป็นแนวแกน X ขึ้น ถ้าน้อยกว่า 0 จะทำอีกเงื่อนไข ตือ this.positionX = 0 ถ้าไม่ใช่ ให้ this.positionX -1
+        if (move.toLocaleUpperCase() === 'W')(this.positionX - 1) < 0 ? this.positionX : this.positionX -=1 ;  
+        // A เป็นแนวแกน Y ซ้าย ถ้าน้อยกว่า 0 จะทำอีกเงื่อนไข ตือ this.positionํY = 0 ถ้าไม่ใช่ ให้ this.positionY -1
+        if (move.toLocaleUpperCase() === 'A')(this.positionY - 1) < 0 ? this.positionY : this.positionY -=1 ;  
+        // S เป็นแนวแกน X ลง ถ้าน้อยกว่า fieldRange จะ +1
+        if (move.toLocaleUpperCase() === 'S')(this.positionX + 1) < fieldRange ? this.positionX += 1 : this.positionX ; 
+        // D เป็นแนวแกน Y ขวา ถ้าน้อยกว่า fieldRange จะ +1
+        if (move.toLocaleUpperCase() === 'D')(this.positionY + 1) < fieldRange ? this.positionY += 1 : this.positionY ; 
         if (this.field[this.positionX][this.positionY] === hole) {
             this.endGame = true;
             console.log('----- LOSE sorry you hit the trap -----');
@@ -94,7 +98,7 @@ class Field {
   }
   newMap(){
     clear();
-    console.log(this.field.map(row => row.join(' ')).join('\n'));
+    console.log(this.field.map(row => row.join('')).join('\n'));
   }
 }
 const nPrint = new Field();
